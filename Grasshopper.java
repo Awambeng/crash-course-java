@@ -1,4 +1,6 @@
-public class Person {
+import java.util.*;
+
+class Person {
     private String name; // instance variable
     private static int age = 10; // static variable
 
@@ -32,4 +34,20 @@ public class Person {
         return (" { name: " + name + ", " + "age: " + age + " }");
     }
 
+}
+ public class Grasshopper {
+ public Grasshopper(String n) {
+ name = n;
+ }
+ public static void main(String[] args) {
+ Grasshopper one = new Grasshopper("g1");
+ Grasshopper two = new Grasshopper("g2");
+
+ one = two;
+ System.out.println(one);
+ two = null;
+ System.out.println(two);
+ one = null;
+ }
+ private String name; 
 }
