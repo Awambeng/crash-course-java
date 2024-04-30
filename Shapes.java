@@ -27,7 +27,10 @@ class Diary {
     int pageCount = 100;
     int getPageCount() {
         return pageCount;
+    }public class Doctor {
+    
     }
+    
     void setPageCount(int val) {
         pageCount = val;
     }

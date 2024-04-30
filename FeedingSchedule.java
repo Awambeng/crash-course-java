@@ -11,6 +11,7 @@ class FeedingSchedule{
                 case 1: x += 5;
             }
         }
+        
         System.out.println(x);
         System.out.print("a");try {
         System.out.print("b");
