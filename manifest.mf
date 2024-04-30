@@ -1,1 +1,1 @@
-Main-Class: oca.Test
+Main-Class: oca.Test, test.com.Main
