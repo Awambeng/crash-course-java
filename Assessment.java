@@ -1,12 +1,12 @@
-class _C {
+class Assessment {
     private static int $_;
     private static String text;
 
     public static void main(String[] main){
-        String a_b;
+        String a_b = "fgg";
         System.out.println($_);
         System.out.println(text);
-        //System.out.println(a_b); // compiler error because the variable was not initialised
+        System.out.println(a_b); // compiler error because the variable was not initialised
         String s1 = "java";
         String s2 = "java";
         StringBuilder sb1 = new StringBuilder();
@@ -17,3 +17,4 @@ class _C {
         System.out.println(sb1.toString().equals(s1));
     }
 }
+-
