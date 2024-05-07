@@ -6,6 +6,8 @@ import java.time.LocalTime;
 import java.time.Month;
 import java.time.Period;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -93,5 +95,53 @@ public class MyDate{
         // System.out.println(tt.plus(pp)); // the LocalTime object doesn't support period meaning with can't add a period to a time.
 
         // formatting date and time
+        LocalDate dd1 = LocalDate.of(2024, 05, 07);
+        System.out.println(dd1.getDayOfMonth());
+        System.out.println(dd1.getDayOfWeek());
+        System.out.println(dd1.getYear());
+        System.out.println(dd1.getDayOfYear());
+
+        // to facilitate our work on formatting dates java provides us with a class DateTimeFormatter that we can use to format any type of date and/or time.
+        // this class DateTimeFormatter is in the package java.time.format.
+        // example
+        LocalDate dd2 = LocalDate.of(2024, 05, 07);
+        LocalTime tt1 = LocalTime.of(15, 9, 34);
+        LocalDateTime dt1 = LocalDateTime.of(dd2, tt1);
+        System.out.println(dd2.format(DateTimeFormatter.ISO_LOCAL_DATE));
+        System.out.println(tt1.format(DateTimeFormatter.ISO_LOCAL_TIME));
+        System.out.println(dt1.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+
+        DateTimeFormatter shortDateTime = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT);
+        System.out.println(shortDateTime.format(dt1));
+        // 1/20/20
+        System.out.println(shortDateTime.format(dd2));
+        // 1/20/20
+       // System.out.println(
+        //shortDateTime.format(tt1)); // UnsupportedTemporalTypeException
+
+
+        // formatting using SHORT and MEDIUM
+        LocalDate date = LocalDate.of(2020, Month.JANUARY, 20);
+        LocalTime time = LocalTime.of(11, 12, 34);
+        LocalDateTime dateTime = LocalDateTime.of(date, time);
+
+        DateTimeFormatter shortFormat = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT);
+        DateTimeFormatter mediumFormat = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM);
+
+        System.out.println(shortFormat.format(dateTime));
+        System.out.println(mediumFormat.format(dateTime));
+
+        // if you don't want to use the predefined formats you can create your own as seen below:
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MMMM dd, yyyy, hh:mm:ss:nn");
+        System.out.println(dateTime.format(dtf));
+
+        // In java 7 and below the class used for formatting dates was the SimpleDateFormat class.
+
+        // parsing dates and times (e.g converting a string to a date or time)
+        DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate date3 = LocalDate.parse("2024-05-07", dtf1);
+        LocalTime time4 = LocalTime.parse("15:41:30");
+        System.out.println(date3);
+        System.out.println(time4);
     }
 }
