@@ -1,7 +1,11 @@
 package myapi;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Month;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.*;
 
 public class ChapterTwoQuestions {
@@ -204,8 +208,50 @@ public class ChapterTwoQuestions {
         // ages.add(null); // throws runtime exception because value is null
         for (int age : ages) System.out.println(age);
 
-        LocalDate date2 = LocalDate.of(2014, Month.JUNE, 21);
+        // question 28 (D, F)
+        LocalDate date2 = LocalDate.of(2014, Month.JUNE, 21); // correct
+        LocalDate date3 = LocalDate.of(2014, 5, 21); // prints May instead of June so its wrong
+        LocalDate date4 = LocalDate.of(2014, 6, 21); // correct
+        LocalDate date5 = LocalDate.of(2014, Calendar.JUNE, 21); // when using Calendar it starts counting the months from 0 so JUNE will be MAY (Month number 5)
         System.out.println(date2);
+        System.out.println(date3);
+        System.out.println(date4);
+        System.out.println(date5);
+
+        // QUESTION 29 (D)
+        LocalDate da = LocalDate.parse("2018-04-30", DateTimeFormatter.ISO_LOCAL_DATE);
+        da.plusDays(2); // no change since Date is immutable
+        //da.plusHours(3);  // In the LocalDate class there is only Date and no time so we can't use the method plusHours().
+        System.out.println(da.getYear() + " " + da.getMonth() + " "
+        + da.getDayOfMonth());
+
+        // question 30 (F)
+        // LocalDate date = LocalDate.of(2018, Month.APRIL, 40);
+        // System.out.println(date.getYear() + " " + date.getMonth() + " "
+        // + date.getDayOfMonth());
+
+        // question 31 (B)
+        LocalDate date7 = LocalDate.of(2018, Month.APRIL, 30);
+        date7.plusDays(2); // date is immutable so it doesn't affect the date7 result
+        date7.plusYears(3); // date is immutable to make it work you need to reassign the variable
+        System.out.println(date7.getYear() + " " + date7.getMonth() + " "
+        + date7.getDayOfMonth());
+
+        // question 32 (E)
+        LocalDateTime d = LocalDateTime.of(2015, 5, 10, 11, 22, 33);
+        Period p = Period.of(1, 2, 3);
+        d = d.minus(p);
+        DateTimeFormatter f = DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT);
+        System.out.println(d.format(f));
+
+        // question 33 (B)
+        LocalDateTime t1 = LocalDateTime.of(2015, 5, 10, 11, 22, 33);
+        Period p1 = Period.ofDays(1).ofYears(2);  // WHEN YOU CHAIN METHODS USING PERIOD IT MAKES USE ONLY OF THE LAST METHOD OF THE CHAIN AND IGNORE THE REST
+        // SO IN OUR CASE IT WILL EXECUTE ONLY THE METHOD ofYears(2) and ignore ofDays(1).
+        t1 = t1.minus(p1);
+        DateTimeFormatter f1 = DateTimeFormatter.ofLocalizedDateTime(FormatStyle
+        .SHORT);
+        System.out.println(f1.format(t1));
     }
 }
 
