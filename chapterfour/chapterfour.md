@@ -69,3 +69,18 @@ private static final int COUNT = 0; // declaration and initialization of the var
 private static final String STUDENT_CLASS = "level 400"; // declaration and initialization of the variable.
 ```
 
+## Static Initialization
+- They are just like the instance initializers which are simple blocks of code that run when a new instance of a class is executed. The static initializers are similar just that static initializers add the static keyword to specify they should be run when the class is first used. For example:
+
+```java
+{System.out.println("hello")} // this is an instance initializer
+
+// static initializer
+private static final int NUM_SECONDS_PER_HOUR;
+static{
+    System.out.println("hello");
+    int numSecondsPerMinute = 60;
+    int numMinutesPerHour = 60;
+    NUM_SECONDS_PER_HOUR = numSecondsPerMinute * numMinutesPerHour;
+}
+```
