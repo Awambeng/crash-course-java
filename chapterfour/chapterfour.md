@@ -43,3 +43,29 @@ public void add() throws Exception, IllegalArgumentException, InterruptedExcepti
 
 - Note that we can pass several exceptions like in the example above by separating each with a comma. 
 
+## Calling a static method
+- To call a static method or static instance variable in java you don't need to instantiate the class. Example:
+Consider the class Animal below:
+```java
+public class Animal{
+    private static String name = "Lion";
+
+    public static void sound(){
+        System.out.println(name + " roars");
+    }
+
+    public static void main(String [] args){
+        // calling the members of Animal
+        System.out.println(Animal.name);
+        Animal.sound();
+    }
+}
+```
+
+- To declare a variable as a constant in java you can use the keyword final and following convention the variable name needs to be all in uppercase. Example:
+
+```java
+private static final int COUNT = 0; // declaration and initialization of the variable.
+private static final String STUDENT_CLASS = "level 400"; // declaration and initialization of the variable.
+```
+
