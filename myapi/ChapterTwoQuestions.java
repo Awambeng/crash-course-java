@@ -1,3 +1,9 @@
+package myapi;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.*;
+
 public class ChapterTwoQuestions {
     public static void main(String[] args){
         // question 1
@@ -93,7 +99,7 @@ public class ChapterTwoQuestions {
         // b.append(4).deleteCharAt(3).delete(3, b.length() - 1);
         // System.out.println(b);
 
-        // question 14 (A, B, D)
+        // question 15 (A, B, D)
         int[][] scores = new int[5][];
         Object[][][] cubbies = new Object[3][0][5];
         //String beans[] = new beans[6]; // wrong beans is not a type
@@ -101,8 +107,105 @@ public class ChapterTwoQuestions {
         //int[][] types = new int[]; // wrong 
         //int[][] java = new int[][]; // wrong
 
-        // question 14
+        // question 14 (A)
+        StringBuilder puzzle = new StringBuilder("Java");
+        puzzle.reverse();
+        // puzzle.append("vaJ").substring(0, 2);
+        //puzzle.append("vaJ").delete(0, 3).deleteCharAt(puzzle.length() - 1);
+        System.out.println(puzzle);
 
+        // question 16 (C)
+        char[] c = new char[2];
+        int length = c.length;
+        System.out.println(length); // Arrays uses the length to determine the length of the array not length()
+
+        // question 17 (D)
+        ArrayList l = new ArrayList(1);
+        l.add(1);
+        l.add(2);
+        System.out.println(l.size()); // ArrayList uses size() method and not length()
+    
+        // question 18 (A, C, D, E)
+
+        // question 19 (B)
+        int[] ar = new int[2];
+        int[] ab = {1,2,3};
+        ArrayList nn = new ArrayList();
+        nn.add(1);
+        nn.add(2);
+
+        ArrayList n = new ArrayList();
+        n.add(1);
+        n.add(2);
+        //n.remove(0); applying the remove on an arraylist that is null or has no element throws an exception index out of bound
+
+        if (n == nn) System.out.println("yes");
+        if (n.equals(nn)) System.out.println("the content of the two arraylist are equal");
+
+        // question 20 (D)
+        List<String> list = new ArrayList<String>();
+        list.add("one");
+        list.add("two");
+        //list.add(7); // compilatio error because of imcopatible type
+        for(String ss1 : list) System.out.println(ss1);
+
+        // question 21 (C)
+        ArrayList<Integer> val = new ArrayList<>();
+        val.add(4);
+        val.add(5);
+        val.set(1, 6);
+        val.remove(0);
+        for (Integer v : val) System.out.println(v);
+
+        // question 22 (A)
+        int[] random = {6, -4, 12, 0, -10};
+        int x = 12;
+        int y = Arrays.binarySearch(random, x);
+        System.out.println(y);
+
+        // question 23 (A)
+        List<Integer> lists = Arrays.asList(10, 4, -1, 5);
+        Collections.sort(lists);
+        Integer array[] = lists.toArray(new Integer[4]);
+        System.out.println(array[0]);
+
+        // question 24 (C)
+        String [] nam = {"Tom", "Dick", "Harry"};
+        //List<String> lis = nam.asList(); // cannot asList() on the array
+        //lis.set(0, "Sue");
+        System.out.println(nam[0]);
+
+        // question 25 (D)
+        List<String> hex = Arrays.asList("30", "8", "3A", "FF");
+        Collections.sort(hex);
+        for (String ll : hex) System.out.println(ll);
+        int x1 = Collections.binarySearch(hex, "8");
+        int y1 = Collections.binarySearch(hex, "3A");
+        int z1 = Collections.binarySearch(hex, "4F");
+        System.out.println(x1 + " " + y1 + " " + z1);
+
+        // question 27
+        List<String> one = new ArrayList<String>();
+        one.add("abc");
+        List<String> two = new ArrayList<>();
+        two.add("abc");
+        if (one == two)
+        System.out.println("A");
+        else if (one.equals(two))
+        System.out.println("B");
+        else
+        System.out.println("C");
+
+        // question 26 (B)
+        List<Integer> ages = new ArrayList<>();
+        ages.add(Integer.parseInt("5"));
+        ages.add(Integer.valueOf("6"));
+        ages.add(7);
+        // ages.add(null); // throws runtime exception because value is null
+        for (int age : ages) System.out.println(age);
+
+        LocalDate date2 = LocalDate.of(2014, Month.JUNE, 21);
+        System.out.println(date2);
     }
 }
 
