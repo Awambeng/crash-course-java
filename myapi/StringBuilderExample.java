@@ -26,7 +26,7 @@ public class StringBuilderExample {
 
         StringBuilder c = new StringBuilder(5);
         c.append("animals");
-        System.out.println(c.capacity());
+        System.out.println("capacity" + c.capacity());
 
         StringBuilder s = new StringBuilder("animals");
         String sub = s.substring(s.indexOf("a"), s.indexOf("al"));

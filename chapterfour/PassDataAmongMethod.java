@@ -11,8 +11,16 @@ public class PassDataAmongMethod {
         System.out.println(name);
 
         StringBuilder name1 = new StringBuilder();
-        speak1(name1);
-        System.out.println(name1);
+        // StringBuilder n = name1;
+        // name1.append("test");
+        // name1.append("test2");
+        // n.append("ntest");
+        // System.out.println(name1.toString());
+        // System.out.println(n.toString());
+        System.out.println(name1.capacity());
+
+        // speak1(name1);
+        // System.out.println(name1);
     }
 
     public static void newNum(int num){

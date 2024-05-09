@@ -163,3 +163,32 @@ public class Example {
 ```
 
 In this example, the modifyArray method receives a copy of the array reference. By modifying the contents of the array, the changes are visible outside the method. Similarly, the modifyContainer method receives a copy of the reference to the Container object. By modifying the object's state via the reference, the changes can be observed outside the method.
+
+## Method Overloading
+Method Overloading in java refers to the ability to define multiple methods with thesame name but different parameter list within a class.
+
+### Key characteristics of method overloading
+
+- Method name: Overloaded methods must have thesame name.
+
+- Parameter List: Overloaded methods must have different parameter lists. Differences in parameter types, number of parameters, or both are considered when determining method overloading.
+
+- Return Type: The return type is not considered when determining method overloading. Overloaded methods can have thesame or different return types.
+
+Example:
+
+```java
+public class MethodOverload{
+    public int add(int a, int b){
+        return a + b;
+    }
+
+    public double add(double a, double b){
+       return a + b;   
+    }
+
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+```

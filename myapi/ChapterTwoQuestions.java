@@ -181,7 +181,11 @@ public class ChapterTwoQuestions {
 
         // question 25 (D)
         List<String> hex = Arrays.asList("30", "8", "3A", "FF");
+        List<Integer> hh = Arrays.asList(11, 2, 30, 20);
+        Collections.sort(hh);
+        System.out.println(hh);
         Collections.sort(hex);
+        System.out.println(hex);
         for (String ll : hex) System.out.println(ll);
         int x1 = Collections.binarySearch(hex, "8");
         int y1 = Collections.binarySearch(hex, "3A");
