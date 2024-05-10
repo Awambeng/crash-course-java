@@ -192,3 +192,70 @@ public class MethodOverload{
     }
 }
 ```
+
+- A constructor is a special method that is used to create objects from a class. The this keyword is used to tell java we are making reference to an instance variable.
+
+Example:
+
+```java
+public class Bunny{
+
+    private String color; // this is an instance variable
+
+    public Bunny(String myColor){ // this is a constructor
+        this.color = myColor;
+    }
+}
+```
+
+- The this keyword is also used to call a constructor within a class and it should beon the first line of that constructor else it won't compile.
+
+- JavaBean are reusable software components (javaBeans call an instance variable a property). The rules for naming javaBeans are as follows:
+
+a. properties are private:
+```java
+ private int numOfEggs;
+```
+
+b. Getter method begin with "is" if the property is boolean.
+```java
+public boolean isHappy(){
+    return happy;
+}
+```
+
+c. Getter method begin with "get" if the property is not a boolean.
+```java
+public int getNumberOfEggs(){
+    return numOfEggs;
+}
+```
+
+d. The method name must have a prefix of set/get/is, followed by the first letter of the property in uppercase, followed by the rest of the property name.
+```java
+public void setNumberOfEggs(int newNumberOfEggs){
+    this.numOfEggs = newNumberOfEggs;
+}
+```
+
+## Creating immutable classes.
+- One way of securing your classes isby encapsulation where you prevent caller classes from making uncontrollable changes to the class. Another way is by making the classes immutable so that they cannot change at all.
+
+- One step in making a class immutable is by omitting the setters. So by doing this if the caller needs to set any property he will do it with the help of the constructor.
+
+Example:
+```java
+public class ImmutableSwan{
+    private int numberOfEggs;
+
+    // constructor
+    public ImmutableSwan(int numEggs){
+        this.numberOfEggs = numEggs;
+    }
+
+    public int getNumberOfEggs(){
+        return numberOfEggs;
+    }
+}
+```
+Note: immutable is only measured after the object is constructed. Immutable classes are allowed to have values upon creation after that they can't change.
