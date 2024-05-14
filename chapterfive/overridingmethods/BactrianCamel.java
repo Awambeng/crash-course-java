@@ -15,11 +15,11 @@ public class BactrianCamel extends Camel {
         return 2;
     }
 
-    protected double getHeight() throws Exception { // DOES NOT COMPILE
-        return 2;
-    }
+   // protected double getHeight() throws Exception { // DOES NOT COMPILE
+      //  return 2;
+    //}
     
-    protected int getLength() throws InsufficientDataException { // DOES NOT COMPILE
-    return 10;
-    }
+    // protected int getLength() throws InsufficientDataException { // DOES NOT COMPILE
+    // return 10;
+    // }
 }

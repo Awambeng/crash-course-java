@@ -1,6 +1,8 @@
 package chapterfive.abstractclasses;
 
-public abstract class Anim extends Animal {
+import chapterfive.javainterfaces.*;
+
+public abstract class Anim extends Animal implements Animals{
     
     public abstract void roar();
 

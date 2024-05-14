@@ -161,3 +161,45 @@ There are two inheritance rules you should keep in mind when extending an interf
 - An interface that extends another interface, as well as an abstract class that implements an interface, inherits all of the abstract methods as its own abstract
 methods.
 - The first concrete class that implements an interface, or extends an abstract class that implements an interface, must provide an implementation for all of the inherited abstract methods.
+
+- Note: In java we cannot have two methods with thesame name and same number of parameter list even if they have different return types. 
+
+## Interface Variables
+We can define variables in an interface but it must be public and can be static or final. Below are two interface variables rules.
+
+- Interface variables are assumed to be public, static and final. Therefore, marking a variable as private or protected will trigger a compiler error.
+- The value of an interface variable must be set when it is declared since it is marked as final.
+
+## Default Interface Methods
+A default method is a method defined within an interface with the default keyword in which a method body is provided. So a default method in simple words is just a method that is defined or created using the default keyword and has a body. Exampple:
+```java
+public interface MyInterface{
+    public default void eat(){
+        System.out.println("eating");
+    }
+}
+```
+
+The following are the default interface method rules you need to be familiar with: 
+
+- A default method may only be declared within an interface and not within a class or abstract class.
+- A default method must be marked with the default keyword. If a method is marked as default, it must provide a method body.
+- A default method is not assumed to be static, final, or abstract, as it may be used or overridden by a class that implements the interface.
+- Like all methods in an interface, a default method is assumed to be public and will not compile if marked as private or protected.
+
+- Note: If a class implements two interfaces that have default methods with the same name and signature, the compiler will throw an error. There is an exception to this rule, though: if the subclass overrides the duplicate default methods, the code will compile without issue—the ambiguity about which version of the method to call has been removed.
+
+## Static Interface Methods
+A static method defined in an interface is not inherited in any classes that implement the interface. Here are the static interface method rules you need to be familiar with:
+
+- Like all methods in an interface, a static method is assumed to be public and will not compile if marked as private or protected.
+- To reference the static method, a reference to the name of the interface must be used.
+
+The following is an example of a static method defined in an interface:
+```java
+public interface Hop {
+    static int getJumpHeight() {
+        return 8;
+    }   
+}
+```

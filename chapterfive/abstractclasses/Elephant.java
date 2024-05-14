@@ -12,6 +12,10 @@ public class Elephant extends Anim {
     public void roar(){
         System.out.println("roar");
     }
+
+    public void greet(){
+        System.out.println("greet");
+    }
     public static void main(String[] args) {
         Elephant e = new Elephant();
         e.roar();
