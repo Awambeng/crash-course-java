@@ -203,3 +203,14 @@ public interface Hop {
     }   
 }
 ```
+
+## Understanding Polymorphism
+Polymorphism is the property of an object to take on many different forms.
+
+Here are some basic rules to keep in mind when casting variables:
+
+- Casting an object from a subclass to a superclass doesn’t require an explicit cast.
+- Casting an object from a superclass to a subclass requires an explicit cast.
+- The compiler will not allow casts to unrelated types.
+- Even when the code compiles without issue, an exception may be thrown at runtime if the object being cast is not actually an instance of that class.
+
