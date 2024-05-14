@@ -29,3 +29,13 @@ This code looks similar to the previous example, but neither line of the constru
 - The method in the child class must be atleast accessible or more accessible than the method in the parent class. Meaning if the method in the parent class was implemented using a protected access modifier when overriding the method you need to use protected access modifier (at least accessible) or you can use public access modifier (more accessible) than parent class method.
 - The method in the child class may not throw a checked exception that is new or broader than the class of any exception thrown in the parent class method.
 - If the method returns a value, it must be thesame or a subclass of the method in the parent class, known as <b style="color: green">Covariant return type</b>
+
+## Hiding Static Methods
+Method hiding is similar but not exactly the same as method overriding. First, the four previous rules for overriding a method must be followed when a method is hidden. In addition, a new rule is added for hiding a method, namely that the usage of the static keyword must be the same between parent and child classes. The following list summarizes the five rules for hiding a method:
+- The method in the child class must have the same signature as the method in the parent class.
+- The method in the child class must be at least as accessible or more accessible than the method in the parent class.
+- The method in the child class may not throw a checked exception that is new or broader than the class of any exception thrown in the parent class method.
+- If the method returns a value, it must be the same or a subclass of the method in the parent class, known as covariant return types.
+- The method defined in the child class must be marked as static if it is marked as static in the parent class (method hiding). Likewise, the method must not be marked
+as static in the child class if it is not marked as static in the parent class (method overriding).
+

@@ -6,8 +6,17 @@ public class Wolf extends Canine{
         return super.getAverageWeight() + 20; // calling method from parent class.
     }
 
+    @Override
+    protected int addTwoNumbers(int a, int b){
+        return a + b + 10;
+    }
+
     public static void main(String[] args) {
         System.out.println(new Canine().getAverageWeight());
         System.out.println(new Wolf().getAverageWeight());
+
+        // implementing the method overriding rules
+        System.out.println(new Canine().addTwoNumbers(2, 3)); // 5
+        System.out.println(new Wolf().addTwoNumbers(2, 3)); // 15
     }
 }
