@@ -67,7 +67,7 @@ public class Swan extends Animal {
 }
 ```
 
-The fi rst thing to notice about this sample code is that the Animal class is declared abstract and Swan is not. Next, the member age and the method eat() are marked as protected and public, respectively; therefore, they are inherited in subclasses such as Swan. Finally, the abstract method getName() is terminated with a semicolon and doesn’t provide a body in the parent class Animal. This method is implemented with the same name and signature as the parent method in the Swan class.
+The first thing to notice about this sample code is that the Animal class is declared abstract and Swan is not. Next, the member age and the method eat() are marked as protected and public, respectively; therefore, they are inherited in subclasses such as Swan. Finally, the abstract method getName() is terminated with a semicolon and doesn’t provide a body in the parent class Animal. This method is implemented with the same name and signature as the parent method in the Swan class.
 
 - Note: An abstract class may contain non abstract methods and variables. An abstract class is not required to have an abstract method. Example:
 
@@ -141,3 +141,23 @@ The following are lists of rules for abstract classes and abstract methods that 
 - Abstract methods may not be declared private or final.
 - Abstract methods must not provide a method body/implementation in the abstract class for which is it declared.
 - Implementing an abstract method in a subclass follows the same rules for overriding a method. For example, the name and signature must be the same, and the visibility of the method in the subclass must be at least as accessible as the method in the parent class.
+
+## Implementing Interfaces
+- An interface is an abstract data type that defines a list of abstract public methods that any class implementing the interface must provide.
+
+## Defining an Interface
+It may be helpful to think of an interface as a specialized kind of abstract class, since it shares many of the same properties and rules as an abstract class. The following is a list of rules for creating an interface, many of which you should recognize as adaptions of the rules for defi ning abstract classes.
+
+- Interfaces cannot be instantiated directly.
+- An interface is not required to have any methods.
+- An interface may not be marked as final.
+- All top-level interfaces are assumed to have public or default access, and they must include the abstract modifier in their definition. Therefore, marking an interface as private, protected, or final will trigger a compiler error, since this is incompatible with these assumptions.
+- All nondefault methods in an interface are assumed to have the modifiers abstract and public in their definition. Therefore, marking a method as private, protected,
+or final will trigger compiler errors as these are incompatible with the abstract and public keywords.
+
+## Inheriting an Interface
+There are two inheritance rules you should keep in mind when extending an interface:
+
+- An interface that extends another interface, as well as an abstract class that implements an interface, inherits all of the abstract methods as its own abstract
+methods.
+- The first concrete class that implements an interface, or extends an abstract class that implements an interface, must provide an implementation for all of the inherited abstract methods.
