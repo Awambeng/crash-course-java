@@ -214,3 +214,8 @@ Here are some basic rules to keep in mind when casting variables:
 - The compiler will not allow casts to unrelated types.
 - Even when the code compiles without issue, an exception may be thrown at runtime if the object being cast is not actually an instance of that class.
 
+## Virtual Methods
+A virtual method is a method in which the specific implementation is not determined until runtime. All non-final, non-static, and non-private java methods are considered virtual methods since any of them can be overriden at runtime. In simple words a virtual method is a method whose implementation is not known until runtime.
+
+## Polymorphic Parameters
+It is the ability to pass an instance of a subclass or interface to a method. For example you can define a method that takes an instance of an interface as a parameter. In this manner, any class that implements the interface can be passed to the method. 
