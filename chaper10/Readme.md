@@ -38,7 +38,10 @@ a. RuntimeException is a subclass of the Exception class and all the subclasses 
 6. NumberFormatException: It is a subclass of IllegalArgumentException and it is thrown when an attempt is made to convert a string to a numeric type.
 
 b. Checked Exception classes: Checked exceptions are subclasses of the Exception class but not the RuntimeException class and must be declared or handled. The common checked exceptions are:
+
 1. IOException: thrown when there is a problem reading or writing a file.
 2. FileNotFoundException: It is a subclass of the IOException thrown when the code tries to reference a file that does not exist.
 
-c. Error classes: 
+c. Error classes: Errors are unchecked exceptions that extend the Error class. They are thrown by the JVM and should not be handled or declared. Errors are rare, but you might see this:
+
+1. ExceptionInitializerError: 
