@@ -188,3 +188,10 @@ jdeps -s --module-path mods mods/chapter.zoo.animal.care.jar
 Note: If you replace the --module-path with -p it won't work because jdeps uses -p option for another purpose.
 
 ## The jmod command.
+Oracle recommend using JAR files for most modules but since there are some files that cannot be added to a JAR in such a situation the JMOD files are used instead of JAR files. So JMOD is used when working with JMOD files. Below are some modes you can use when dealing with the jmod command.
+
+1. create: create a JMOD file.
+2. extract: extract all files from a JMOD (works like unzip).
+3. describe: prints the module details such as requires.
+4. list: list all the files in the JMOD file.
+5. hash: shows a long string that goes with the file.
