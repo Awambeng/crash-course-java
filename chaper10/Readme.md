@@ -42,6 +42,53 @@ b. Checked Exception classes: Checked exceptions are subclasses of the Exception
 1. IOException: thrown when there is a problem reading or writing a file.
 2. FileNotFoundException: It is a subclass of the IOException thrown when the code tries to reference a file that does not exist.
 
-c. Error classes: Errors are unchecked exceptions that extend the Error class. They are thrown by the JVM and should not be handled or declared. Errors are rare, but you might see this:
+c. Error classes: Error are unchecked exceptions that extend the error class. They are not thrown by the JVM and should not be handled or declared. Errors are rare but you might see them in the exam.
 
-1. ExceptionInitializerError: 
+1. ExceptionInitializerError: thrown when a static initializer throws an exception and doesn't handle it.
+
+2. StackOverflowError: thrown when a method calls itself so many times (this is called infinite recursion because the method calls itself many times without an end).
+
+3. NoClassDefFoundError: thrown when a class is available at compile time but not at runtime.
+
+
+## Handling Exceptions.
+We can handle exceptions in java using the try and catch statement and its syntax is as follows:
+
+```java
+try{
+    // block of code (protected code).
+}catch(exception_type identifier){
+    // exception handler.
+}
+```
+
+Note: When working with chaining catch blocks in java make sure to check the relationship between the different classes because if a catch block consist of a superclass and a subclass and that the superclass is first caught before the sublclass the subclass when caught after the superclass declaration will not be reachable hence causing a compiler error so take note whereas going the other way round works perfectly.
+
+Demonstration:
+```java
+void eat(){
+    try{
+        // some code
+    }catch(IOException e){
+        System.out.println("catch parent class exception...");
+    }catch(FileNotFoundException e){ // does not compile becaue code is unreachable since IOException is a parent class to FileNotFoundException class 
+        System.out.println("catch subclass exception...");
+    }
+}
+```
+
+Changing the order that is putting the subclass first and parent class second will work. 
+
+Demonstration:
+```java
+void eat(){
+    try{
+        // some code here.
+    }catch(FileNotFoundException e){
+        System.out.println("catch subclass exception...");
+    }catch(IOException e){
+        System.out.println("catch superclass exception...");
+    }
+}
+```
+>>>>>>> b0fd43de4d9cbae664d109b1ce560de4ec75fb94
