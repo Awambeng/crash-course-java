@@ -12,3 +12,7 @@ Note: It's is a good practice of declaring final fields with uppercase letters. 
 
 - Marking a method as final means that method cannot be overriden. Also marking a class as final means that class cannot be extended.
 
+## Creating nested classes.
+A nested class is a class that is defined within another class. A nested class can come in one of the four different ways.
+
+1. 

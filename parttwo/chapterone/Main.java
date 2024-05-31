@@ -48,6 +48,20 @@ public class Main{
         new Main().printZooInfo2(true);
         var main = new Main();
         main.info();
+        var season = Season.SUMMER;
+        switch(season){
+            case SPRING:
+                System.out.println("spring");
+                break;
+            case SUMMER:
+                System.out.println("Time to pool");
+                break;
+            case WINTER:
+                System.out.println("Get out the sled");
+                break;
+            default:
+                System.out.println("Is it summer yet?");
+        }
     }
 }
 

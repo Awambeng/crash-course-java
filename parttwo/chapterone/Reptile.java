@@ -11,6 +11,28 @@ public final class Reptile {
         var season = Season.SUMMER;
         System.out.println(season);
         System.out.println(Season.SUMMER);
+        var compare = (season == Season.SUMMER) ? true : false;
+        System.out.println(compare);
+        var compare1 = (season.equals(Season.SUMMER)) ? true : false;
+        System.out.println(compare1);
+        for (var res : season.values()){
+            var s = res.valueOf(res.name());
+            if (s == res.SUMMER){
+                System.out.println("search found");
+            }
+            System.out.println(res.name() + " is declared at index : " + res.ordinal());
+        }
+
+        // how to retrieve the value of an enum from a String using the valueOf() method.
+        var s = season.valueOf("SUMMER"); // note you must provide the exact value of the enum constant
+        if(s == season.SUMMER){
+            System.out.println("they are equal");
+        }else{
+            System.out.println("they are not equal");
+        }
+        season.printExpectedVisitors();
+        // calling a method defined in an enum
+        Season.WINTER.printExpectedVisitors();
     }
 }
 
@@ -30,4 +52,11 @@ public final class Reptile {
  * 
  * enums are declared using the enum keyword.
  * 
+ * note: enums can be compared with == because they are static and final. we can also use equals() method to compare enums.
+ * 
+ * enums provide a method values() that gets the array of values.
+ * enums also provide a helper method name() that gets the name of the enum and a ordinal method to get the index of the enum.
+ * 
  */
+
+
